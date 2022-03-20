@@ -30,7 +30,7 @@ class controller {
             pool.query(`SELECT users.id,firstname,middlename,lastname,email,phone,
         users.address,customer.name AS customer,roles.name AS role FROM users
         LEFT JOIN customer ON customerid = customer.id LEFT JOIN roles 
-        ON role = roles.key WHERE id = $1`, [id], (error, result) => {
+        ON role = roles.key WHERE users.id = $1`, [id], (error, result) => {
                 if (error) {
                     res.status(404).send("You have entered wrong id");
                 }
