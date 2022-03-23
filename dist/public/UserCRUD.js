@@ -109,7 +109,7 @@ export class UserCRUD {
                 }
                 const data = yield getCustomerIdByName(this.myURL, selectedCustomer);
                 for (let i = 0; i <= 2; i++) {
-                    let s = tr.children[6].children[0].children[i];
+                    let s = tr.children[7].children[0].children[i];
                     if (s.selected) {
                         selectedrole = s.textContent;
                     }

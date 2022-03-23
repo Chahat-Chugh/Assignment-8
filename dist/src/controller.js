@@ -40,56 +40,6 @@ class controller {
             });
         });
     }
-    getCustomers(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            pool.query('SELECT name from customer ORDER BY id ASC', (err, result) => {
-                if (err) {
-                    throw err;
-                }
-                else {
-                    res.status(200).json(result.rows);
-                }
-            });
-        });
-    }
-    getCustomerIdByName(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const customerName = req.params.name;
-            pool.query('SELECT id FROM customer WHERE name = $1', [customerName], (err, result) => {
-                if (err) {
-                    throw err;
-                }
-                else {
-                    res.status(200).send(result.rows);
-                }
-            });
-        });
-    }
-    getRoles(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            pool.query('SELECT name from roles ORDER BY key ASC', (err, result) => {
-                if (err) {
-                    throw err;
-                }
-                else {
-                    res.status(200).json(result.rows);
-                }
-            });
-        });
-    }
-    getRoleKeyByName(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const roleName = req.params.name;
-            pool.query('SELECT key FROM roles WHERE name = $1', [roleName], (err, result) => {
-                if (err) {
-                    throw err;
-                }
-                else {
-                    res.status(200).send(result.rows);
-                }
-            });
-        });
-    }
     createUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { firstName, middleName, lastName, email, phone, role, address, customer } = req.body;

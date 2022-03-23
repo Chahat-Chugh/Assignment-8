@@ -141,15 +141,13 @@ export class UserCRUD implements CRUD <User>
             
             for(let i = 0; i<= 2;i++)
             {
-                let s = tr.children[6].children[0].children[i] as HTMLOptionElement;
+                let s = tr.children[7].children[0].children[i] as HTMLOptionElement;
                 if(s.selected)
                     {
                          selectedrole = s.textContent!;
                     }
             } 
-            
             const data1 = await getRoleKey(this.myURL,selectedrole);
-
             user = {
                 "id": 0,
                 "firstName": tr.cells.namedItem('firstname').textContent,

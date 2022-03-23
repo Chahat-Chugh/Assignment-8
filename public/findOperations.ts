@@ -17,7 +17,7 @@ export async function getRoleList(myURL:string)
 }
 
 export async function getRoleKey(myURL:string,role:string) {
-    const res = await fetch(myURL+'/roles/'+`${role}`);
+    const res = await fetch(myURL+ '/roles/'+`${role}`);
     const data1 =await res.json();
     return data1;
 }
